@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Surpresa — Laís</title>
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+<!-- Música -->
+<audio id="bgMusic" loop>
+  <source src="./img/1128.mp4" type="audio/mpeg">
+</audio>
+
+<!-- LOGIN -->
+<div id="loginBox">
+  <div class="login-card">
+    <h2>🎀 Surpresa pra Laís 🎀</h2>
+    <p class="muted">Digite a senha para entrar</p>
+    <input type="password" id="senha" placeholder="Senha...">
+    <button id="entrarBtn">Entrar</button>
+    <p id="erro" class="erro"></p>
+  </div>
+</div>
+
+<!-- CONTEÚDO -->
+<div class="wrap" id="content" style="display:none;">
+  <header>
+  <div class="logo">LS</div>
+  <div>
+    <h1>Uma surpresinha pra Laís 🎁🌸</h1>
+
+    <div class="marquee-box">
+      <p class="marquee-text">Só algo feito com carinho... nada exagerado 💐💞</p>
+    </div>
+
+  </div>
+</header>
+
+
+  <div class="card">
+    <div class="grid">
+      <div class="hero">
+        <img src="./img/557613373_17889675477353795_5620032922911898747_n.jpg" alt="Foto especial" id="perfilFoto">
+        <div class="muted">Um momento especial ✨</div>
+      </div>
+
+      <div>
+        <div class="center">
+          <div class="count" id="count">-- dias</div>
+          <div class="muted">🎉 Parabéns pelo seu aniversário! 🎂💖</div>
+        </div>
+
+        <button class="btn" id="revealBtn">💝 Abrir Surpresa</button>
+
+        <div class="reveal" id="reveal">
+          <span class="closeBtn" id="closeMsg">✖</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARROSSEL -->
+    <div class="carousel">
+      <div class="carousel-track">
+        <div class="slide"><img src="./img/imag-laiz1.webp"></div>
+        <div class="slide"><img src="./img/imag-lais2.jpeg"></div>
+        <div class="slide"><img src="./img/imag-laiz3.jpeg"></div>
+        <div class="slide"><img src="./img/imag-laiz4.jpeg"></div>
+        <div class="slide"><img src="./img/imag-laiz5.jpg"></div>
+        <div class="slide"><img src="./img/imag-laiz6.jpg"></div>
+        <div class="slide"><img src="./img/WhatsApp Image 2025-11-21 at 17.06.11.jpeg"></div>
+      </div>
+    </div>
+
+    <section style="margin-top:14px">
+      <h3>Que seu dia seja tão especial quanto você.</h3>
+      <p class="muted"><strong>Laís</strong>, mesmo sem a gente ter se conhecido pessoalmente. Tu tem um jeito diferente… bom de verdade.</p>
+    </section>
+  </div>
+  
+<section class="opniao-section">
+  <h3>Deixe sua opinião 🎀</h3>
+  <textarea id="opniaoInput" placeholder="Escreva aqui o que você acha da surpresa..." rows="4"></textarea>
+  <button id="enviarOpniao">Enviar</button>
+</section>
+
+
+
+ <footer class="footer">
+  <div class="footer-content">
+    <p>Com carinho, <strong>Fábio Resende</strong> 💖</p>
+    <p class="footer-subtext">Resende Tech Solutions — Soluções de tecnologia para seu dia a dia</p>
+  </div>
+</footer>
+
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox"><img id="lightboxImg" src=""></div>
+
+<script src="script.js"></script>
+</body>
+</html>
