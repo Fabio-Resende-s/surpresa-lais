@@ -1,20 +1,34 @@
 // LOGIN
-const SENHA = ""; // Coloque sua senha aqui
+// LOGIN
+const SENHA = "amor"; // Coloque sua senha aqui
 const loginBox = document.getElementById("loginBox");
 const content = document.getElementById("content");
 const entrarBtn = document.getElementById("entrarBtn");
 const erro = document.getElementById("erro");
 const music = document.getElementById("bgMusic");
+const senhaInput = document.getElementById("senha");
 
-entrarBtn.onclick = () => {
-  const valor = document.getElementById("senha").value;
+// Função de login
+function validarLogin() {
+  const valor = senhaInput.value;
   if(valor === SENHA){
     loginBox.style.display="none";
     content.style.display="block";
   } else {
     erro.textContent="Senha incorreta ❌";
   }
-};
+}
+
+// Clique no botão
+entrarBtn.onclick = validarLogin;
+
+// Pressionar Enter no teclado
+senhaInput.addEventListener("keydown", function(event){
+  if(event.key === "Enter") {  // Verifica se a tecla pressionada é Enter
+    validarLogin();
+  }
+});
+
 
 // CONTAGEM REGRESSIVA
 const year = new Date().getFullYear();
