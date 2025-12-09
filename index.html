@@ -3,59 +3,81 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Surpresa — Laís</title>
+<title>Uma Surpresa Especial para Laís 💖</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 
 <!-- Música -->
 <audio id="bgMusic" loop>
-  <source src="./img/1128.mp4" type="audio/mpeg">
+  <source src="./img/1209.MP3" type="audio/mpeg">
+  <source src="./img/FELIZ ANIVERSÁRIO [GhkD0ZOL7eQ].mp3" type="audio/mpeg">
 </audio>
+
+<!-- Corações flutuantes -->
+<div class="hearts" id="heartsContainer"></div>
 
 <!-- LOGIN -->
 <div id="loginBox">
   <div class="login-card">
-    <h2>🎀 Surpresa pra Laís 🎀</h2>
-    <p class="muted">Digite a senha para entrar</p>
-    <input type="password" id="senha" placeholder="Senha...">
-    <button id="entrarBtn">Entrar</button>
+    <h2>💝 Surpresa para Laís 💝</h2>
+    <p class="muted">Digite a senha para ver sua surpresa especial</p>
+    <input type="password" id="senha" placeholder="Dica: dia do seu aniversário (2 dígitos)">
+    <button id="entrarBtn">Entrar no Mundo Encantado</button>
     <p id="erro" class="erro"></p>
+    <p style="margin-top: 20px; font-size: 0.8rem; color: #888;">Dica: É um número de dois dígitos 😉</p>
   </div>
 </div>
 
 <!-- CONTEÚDO -->
 <div class="wrap" id="content" style="display:none;">
   <header>
-  <div class="logo">LS</div>
-  <div>
-    <h1>Uma surpresinha pra Laís 🎁🌸</h1>
-
-    <div class="marquee-box">
-      <p class="marquee-text">Só algo feito com carinho... nada exagerado 💐💞</p>
+    <div class="logo">LS</div>
+    <div>
+      <h1>Uma Surpresa Especial para Laís 🎁🌸</h1>
+      <div class="marquee-box">
+        <p class="marquee-text">Feito com carinho para iluminar o seu dia! ✨💖</p>
+      </div>
     </div>
-
-  </div>
-</header>
-
+  </header>
 
   <div class="card">
     <div class="grid">
       <div class="hero">
-        <img src="./img/imagem013.jpeg" alt="Foto especial" id="perfilFoto">
-        <div class="muted">Um momento especial ✨</div>
+        <img src="./img/imagem013.jpeg" alt="Foto especial" id="perfilFoto" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 3px solid #ff85a2;">
+    
+        <div class="muted">Uma pessoa incrível que merece tudo de bom ✨</div>
       </div>
 
       <div>
         <div class="center">
           <div class="count" id="count">-- dias</div>
-          <div class="muted">🎉 Parabéns pelo seu aniversário! 🎂💖</div>
+          <div class="muted">🎂 Feliz Aniversário! Que este dia seja mágico! 🎉💖</div>
+          
+          <!-- Contador de tempo (simulado) -->
+          <div class="tempo-juntos">
+            <div class="tempo-item">
+              <div class="tempo-numero" id="diasConhecidos">0</div>
+              <div class="tempo-label">Dias conhecendo você</div>
+            </div>
+            <div class="tempo-item">
+              <div class="tempo-numero" id="sorrisos">127</div>
+              <div class="tempo-label">Sorrisos que você me deu</div>
+            </div>
+          </div>
         </div>
 
-        <button class="btn" id="revealBtn">💝 Abrir Surpresa</button>
+        <button class="btn" id="revealBtn">💌 Abrir Mensagem Especial</button>
 
         <div class="reveal" id="reveal">
           <span class="closeBtn" id="closeMsg">✖</span>
+          <div id="mensagemEspecial" style="font-family: 'Dancing Script', cursive; font-size: 1.8rem; color: #5a3d5c; line-height: 1.4;">
+            <!-- A mensagem será inserida aqui via JavaScript -->
+          </div>
         </div>
       </div>
     </div>
@@ -80,36 +102,34 @@
         <div class="slide"><img src="./img/imagem015.jpg"></div>
         <div class="slide"><img src="./img/imagem016.jpg"></div>
         <div class="slide"><img src="./img/imagem017.jpeg"></div>
-        
       </div>
     </div>
 
-    <section style="margin-top:14px">
-      <h3>Que seu dia seja tão especial quanto você.</h3>
-      <p class="muted"><strong>Laís</strong>, mesmo sem a gente ter se conhecido pessoalmente. Tu tem um jeito diferente… bom de verdade.</p>
+    <section>
+      <h3>Para alguém que ilumina os dias com sua energia</h3>
+      
     </section>
   </div>
   
-<section class="opniao-section">
-  <h3>Deixe sua opinião 🎀</h3>
-  <textarea id="opniaoInput" placeholder="Escreva aqui o que você acha da surpresa..." rows="4"></textarea>
-  <button id="enviarOpniao">Enviar</button>
-</section>
+  <section class="opniao-section">
+    <h3>Deixe sua mensagem para mim 🎀</h3>
+    <p style="text-align: center; margin-bottom: 15px; color: #8a4baf;">O que você achou desta surpresa? Adoraria saber sua opinião!</p>
+    <textarea id="opniaoInput" placeholder="Escreva aqui o que você achou da surpresa, o que sentiu, ou qualquer mensagem que queira compartilhar..." rows="4"></textarea>
+    <button id="enviarOpniao">Enviar Mensagem</button>
+  </section>
 
-
-
- <footer class="footer">
-  <div class="footer-content">
-    <p>Com carinho, <strong>Fábio Resende</strong> 💖</p>
-    <p class="footer-subtext">Resende Tech Solutions — Soluções de tecnologia para seu dia a dia</p>
-  </div>
-</footer>
-
+  <footer class="footer">
+    <div class="footer-content">
+      <p>Feito com carinho especial para você, <strong>Laís</strong> 💖</p>
+      <p class="footer-subtext">Um presente digital de Fábio Resende para iluminar seu aniversário</p>
+      <p style="margin-top: 10px; font-size: 0.9rem; color: #8a4baf;">Que seu dia 11 de abril seja incrível! 🎂🎉</p>
+    </div>
+  </footer>
 </div>
 
 <!-- LIGHTBOX -->
 <div id="lightbox"><img id="lightboxImg" src=""></div>
 
-<script src="script.js"></script>
+<script src="./script.js"></script>
 </body>
 </html>
