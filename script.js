@@ -25,35 +25,21 @@ document.addEventListener("DOMContentLoaded", function () {
   const SENHA_CORRETA = "11";
 
   // Configurar data do aniversário (11 de abril)
-  const hoje = new Date();
-  const aniversario = new Date(hoje.getFullYear(), 3, 11); // Abril é mês 3 (0-indexed)
+  //const hoje = new Date();
+  //const aniversario = new Date(hoje.getFullYear(), 3, 11); // Abril é mês 3 (0-indexed)
 
   // Se o aniversário já passou este ano, considerar próximo ano
-  if (hoje > aniversario) {
-    aniversario.setFullYear(aniversario.getFullYear() + 1);
-  }
+  //if (hoje > aniversario) {
+   // aniversario.setFullYear(aniversario.getFullYear() + 1);
+  //}
 
   // Calcular dias faltantes para o aniversário
-  const diffTime = aniversario.getTime() - hoje.getTime();
-  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+  //const diffTime = aniversario.getTime() - hoje.getTime();
+ // const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
-  // Atualizar contador
-  if (diffDays === 0) {
-    countElement.textContent = "HOJE! 🎉";
-  } else if (diffDays === 1) {
-    countElement.textContent = "1 dia";
-  } else {
-    countElement.textContent = `${diffDays} dias`;
-  }
+  
 
-  // Configurar contador de dias conhecidos (simulado)
-  const diasConhecidosNum = Math.floor(Math.random() * 100) + 50;
-  diasConhecidos.textContent = diasConhecidosNum;
-
-  // Configurar contador de sorrisos (aleatório)
-  const sorrisosNum = Math.floor(Math.random() * 200) + 100;
-  sorrisos.textContent = sorrisosNum;
-
+ 
   // Criar corações flutuantes
   function criarCoracoes() {
     for (let i = 0; i < 50; i++) {
@@ -271,3 +257,27 @@ Fábio Resende 💖`,
     }, 300);
   });
 });
+
+// CAIXINHA DE MÚSICA
+const audioPlayer = document.getElementById("audioPlayer");
+const musicSelect = document.getElementById("musicSelect");
+const playBtn = document.getElementById("playBtn");
+const musicName = document.getElementById("musicName");
+
+let isPlaying = false;
+
+playBtn.onclick = () => {
+  if (!isPlaying) {
+    audioPlayer.src = "./musicas/" + musicSelect.value;
+    audioPlayer.play();
+    playBtn.textContent = "⏸ Pausar";
+    musicName.textContent = "Tocando: " + musicSelect.options[musicSelect.selectedIndex].text;
+    isPlaying = true;
+  } else {
+    audioPlayer.pause();
+    playBtn.textContent = "▶ Tocar";
+    musicName.textContent = "Pausada";
+    isPlaying = false;
+  }
+};
+

@@ -139,6 +139,13 @@
     text-align: center;
     flex-grow: 1;
   }
+  .nemer {
+     font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    color: #d63384;
+    text-align: center;
+    flex-grow: 1;
+  }
 
   .marquee-box {
     background: linear-gradient(to right, #f8d5ff, #ffe5f0);
@@ -263,7 +270,7 @@
     transform: translateY(-5px);
     box-shadow: 0 12px 25px rgba(106, 17, 203, 0.4);
   }
-
+/* MENSAGEM ESPECIAL (OCULTA INICIALMENTE) */
   .reveal {
     background: linear-gradient(135deg, #fff5f9, #f0f4ff);
     padding: 30px;
@@ -271,27 +278,34 @@
     border: 2px dashed #d63384;
     position: relative;
     min-height: 200px;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     text-align: center;
   }
+ 
 
   .closeBtn {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: #ff4757;
-    color: white;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-size: 0.9rem;
-  }
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: #ff4444;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.closeBtn:hover {
+  background: #ff6666;
+  transform: rotate(90deg);
+  transition: all 0.3s;
+}
 
   /* Carrossel */
   .carousel {
@@ -314,14 +328,14 @@
 
   .slide {
     flex: 0 0 auto;
-    width: 250px;
-    height: 200px;
+    width: 300px;
+    height: 500px;
     padding: 10px;
   }
 
   .slide img {
     width: 100%;
-    height: 100%;
+    height: 400px;
     object-fit: cover;
     border-radius: 15px;
     transition: transform 0.3s;
@@ -508,7 +522,7 @@
   }
 
   .tempo-numero {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: bold;
     color: #d63384;
     font-family: 'Dancing Script', cursive;
@@ -516,5 +530,42 @@
 
   .tempo-label {
     font-size: 0.9rem;
-    color: #8a4baf;
+    color: #7b07bd;
   }
+/* ESTILOS ESPECÍFICOS PARA A SEÇÃO DO JOGO */
+.jogo-section {
+  text-align: center;
+  margin: 40px 0;
+  padding: 30px;
+  background: linear-gradient(135deg, rgba(138, 75, 175, 0.1) 0%, rgba(255, 107, 203, 0.1) 100%);
+  border-radius: 20px;
+  border: 2px dashed #8a4baf;
+  transition: all 0.3s ease;
+}
+
+.jogo-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(138, 75, 175, 0.2);
+}
+
+.btn-jogo {
+  background: linear-gradient(45deg, #ff6bcb, #8a4baf);
+  color: white;
+  border: none;
+  padding: 18px 40px;
+  border-radius: 50px;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 20px 0;
+  transition: all 0.3s;
+  box-shadow: 0 10px 25px rgba(138, 75, 175, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-jogo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 35px rgba(138, 75, 175, 0.4);
+}
